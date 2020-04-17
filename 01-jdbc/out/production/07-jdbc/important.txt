@@ -1,0 +1,22 @@
+2. Statement
+This Statement has no cache, good for simple and static SQL statements like CREATE or DROP.
+ In Statement, the way we construct the condition or parameters in SQL is prone to SQL injection,
+  remember escape the quotes and special characters.
+
+statement.execute(sql) – Normally for DDL like CREATE or DROP
+statement.executeUpdate(sql) – Normally for DML like INSERT, UPDATE, DELETE
+statement.executeQuery(sql) – Run SELECT query and return a ResultSet
+statement.executeBatch() – Run SQL commands as a batch
+
+
+
+
+3. PreparedStatement
+PreparedStatement extends Statement to provide better performance by precompiled and cached the SQL statement,
+ good for SQL statement that need to execute multiple times. Furthermore, it provides many setXxx()
+ to protect SQL injection by escaping the quotes and special characters.
+
+preparedStatement.execute() – Normally for DDL like CREATE or DROP
+preparedStatement.executeUpdate() – Normally for DML like INSERT, UPDATE, DELETE
+preparedStatement.executeQuery() – Run SELECT query and return a ResultSet
+preparedStatement.executeBatch() – Run SQL commands as a batch
